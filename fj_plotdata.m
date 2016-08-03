@@ -1,10 +1,9 @@
-% Plot Data for Jun
-
+function fj_plotdata(data)
 
 FrameRate = 16.6;
 
-Thisdata = g6s324; 
 
+Thisdata = data;
 % cells = [2 3 5 8 9 11 14 15];
 % [1:26]
 
@@ -19,7 +18,7 @@ counter = 1;
 for i = 2:size(Thisdata,2);
 
 
- 
+
     plot((1:size(Thisdata,1))/FrameRate,zscore(Thisdata(:,i))+counter*6);
     counter = counter+1;
     hold on;
@@ -32,8 +31,8 @@ end
 
 figure();
  for i = 2:size(Thisdata,2);
-     
-    plot((1:size(Thisdata,1))/FrameRate,(Thisdata(:,i)-mean(Thisdata(:,i),1))+counter*20);
+
+    plot((1:size(Thisdata,1))/FrameRate,(Thisdata(:,i)-mean(Thisdata(:,i),1))-counter*50);
     counter = counter+1;
     hold on;
     title('mean subtracted traces');
